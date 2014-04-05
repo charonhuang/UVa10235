@@ -6,7 +6,8 @@ public class Main {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 
-		while (sc.hasNextInt()) {
+		while (sc.hasNextInt())
+		{
 			int N = sc.nextInt();
 
 			Boolean isPrime = CheckPrime(N);
@@ -19,17 +20,25 @@ public class Main {
 
 			Boolean isRevPrime = CheckPrime(rN);
 
-			if (isPrime == false) {
+			if (isPrime == false)
+			{
 				System.out.print(N);
 				System.out.println(" is not prime.");
-			} else if (isPrime == true && isRevPrime == false) {
+			}
+			else if (isPrime == true && isRevPrime == false)
+			{
 				System.out.print(N);
 				System.out.println(" is prime.");
-			} else if (isPrime == true && isRevPrime == true) {
-				if (N != rN) {
+			}
+			else if (isPrime == true && isRevPrime == true)
+			{
+				if (N != rN)
+				{
 					System.out.print(N);
 					System.out.println(" is emirp.");
-				} else {
+				}
+				else
+				{
 					System.out.print(N);
 					System.out.println(" is prime.");
 				}
@@ -38,10 +47,16 @@ public class Main {
 		sc.close();
 	}
 	
-	static Boolean CheckPrime(int input) {
+	static Boolean CheckPrime(int input)
+	{
+		if(input == 1)
+			return false;
+		
 		Boolean isPrime = true;
-		for (int i = 2; i * i < input; i++) {
-			if (input % i == 0) {
+		for (int i = 2; i * i <= input; i++)
+		{
+			if (input % i == 0)
+			{
 				isPrime = false;
 				break;
 			}
